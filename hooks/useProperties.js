@@ -28,7 +28,7 @@ export const useProperties = (filters = {}) => {
             display_order
           )
         `)
-        .eq('status', 'active')
+        .in('status', ['active', 'for sale'])
         .order('created_at', { ascending: false })
 
       // Apply state filter (if no states selected, show all)

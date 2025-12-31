@@ -9,7 +9,7 @@ async function getProperty(slug) {
     .from('wholesale_deals')
     .select('*')
     .eq('id', slug)
-    .eq('status', 'active')
+    .in('status', ['active', 'for sale'])
     .single()
 
   if (error || !property) {
